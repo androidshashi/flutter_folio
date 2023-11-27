@@ -29,7 +29,7 @@ class ProfilePicture extends StatelessWidget {
         ),
         if (!Dimen.isMobile(context))
           Text(
-            "Email: ${context.read<HomeViewModel>().aboutMeModel?.email}\nPhone: ${context.read<HomeViewModel>().aboutMeModel?.contactNo}",
+            "Email: ${context.watch<HomeViewModel>().aboutMeModel?.email}\nPhone: ${context.watch<HomeViewModel>().aboutMeModel?.contactNo}",
             style: headingTxtStyle.copyWith(
               fontSize: Dimen.getCurrentWidth(context) * 0.01,
             ),

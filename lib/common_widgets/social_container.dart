@@ -38,7 +38,10 @@ class SocialContainer extends StatelessWidget {
             height: iconSize,
             width: iconSize,
           ),
-          onTap: () {},
+          onTap: () {
+            launchUrl(Uri.parse(
+                context.read<HomeViewModel>().aboutMeModel!.linkedIn!));
+          },
         ),
         SizedBox(
           width: iconSize,
@@ -54,17 +57,17 @@ class SocialContainer extends StatelessWidget {
                 Uri.parse(context.read<HomeViewModel>().aboutMeModel!.github!));
           },
         ),
-        SizedBox(
-          width: iconSize,
-        ),
-        ShadowedContainer(
-          child: Image.asset(
-            AppImage.fb,
-            height: iconSize,
-            width: iconSize,
-          ),
-          onTap: () {},
-        ),
+        // SizedBox(
+        //   width: iconSize,
+        // ),
+        // ShadowedContainer(
+        //   child: Image.asset(
+        //     AppImage.fb,
+        //     height: iconSize,
+        //     width: iconSize,
+        //   ),
+        //   onTap: () {},
+        // ),
       ],
     );
   }
