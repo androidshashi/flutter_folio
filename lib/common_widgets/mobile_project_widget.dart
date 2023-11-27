@@ -4,26 +4,29 @@ import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/app_image.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
 import 'package:flutter_folio/constants/dimen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MobileProjectWidget extends StatelessWidget {
   const MobileProjectWidget(
       {Key? key,
-      required this.onTap,
       required this.imageUrl,
       required this.title,
       required this.description,
-      required this.githubUrl})
+      required this.githubUrl,
+      required this.platform,
+      required this.tools})
       : super(key: key);
-  final VoidCallback onTap;
   final String imageUrl;
   final String title;
   final String description;
   final String githubUrl;
+  final String platform;
+  final String tools;
 
   @override
   Widget build(BuildContext context) {
     return BorderedContainer(
-        onTap: onTap,
+        onTap: () => launchUrl(Uri.parse(githubUrl)),
         width: double.infinity,
         height: Dimen.getCurrentWidth(context) * 0.7,
         padding: EdgeInsets.zero,
@@ -54,7 +57,28 @@ class MobileProjectWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4.0, left: 8, right: 8),
                 child: Text(
                   title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: titleStyle.copyWith(color: AppColor.primary),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Text(
+                  "Tools: $tools",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: subTitleStyle.copyWith(color: AppColor.onPrimary),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Text(
+                  "Supports: $platform",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: titleStyle.copyWith(
+                      color: AppColor.onPrimary, fontSize: 10),
                 ),
               ),
               Expanded(
@@ -62,7 +86,7 @@ class MobileProjectWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                     description,
-                    style: subTitleStyle,
+                    style: subTitleStyle.copyWith(fontSize: 10),
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),

@@ -3,26 +3,29 @@ import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/app_image.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DesktopProjectWidget extends StatelessWidget {
   const DesktopProjectWidget(
       {Key? key,
-      required this.onTap,
       required this.imageUrl,
       required this.title,
       required this.description,
-      required this.githubUrl})
+      required this.githubUrl,
+      required this.tools,
+      required this.platform})
       : super(key: key);
-  final VoidCallback onTap;
   final String imageUrl;
   final String title;
   final String description;
   final String githubUrl;
+  final String tools;
+  final String platform;
 
   @override
   Widget build(BuildContext context) {
     return BorderedContainer(
-        onTap: onTap,
+        onTap: () => launchUrl(Uri.parse(githubUrl)),
         padding: EdgeInsets.zero,
         child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -51,15 +54,37 @@ class DesktopProjectWidget extends StatelessWidget {
                 ]),
               ),
               Padding(
-                padding: const EdgeInsets.all(5.0),
+                padding: const EdgeInsets.only(left: 8, right: 8),
                 child: Text(
                   title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: titleStyle.copyWith(color: AppColor.primary),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Text(
+                  "Tools: $tools",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: titleStyle.copyWith(
+                      color: AppColor.onPrimary, fontSize: 12),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8, right: 8),
+                child: Text(
+                  "Supports $platform",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: titleStyle.copyWith(
+                      color: AppColor.onPrimary, fontSize: 12),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Text(
                     description,
                     style: subTitleStyle.copyWith(fontSize: 10),

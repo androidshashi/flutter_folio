@@ -1,38 +1,78 @@
 [
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "UTube",
+    "description": "Play YouTube videos in background and in locked screen",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/UTube",
+    "tools":"Android Studio, Kotlin, Xml",
+    "platform":"Android"
   },
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "Safe Keeper 2.0",
+    "description": "Stores sensitive credentials, and notes",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/safe_keeper_2.0",
+    "tools":"Android Studio, flutter dart",
+    "platform":"Android, Web"
   },
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "Earphone Mode Off",
+    "description": "This app solves audio jack problem. if stuck.",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/Earphonemodeoff",
+    "tools":"Android Studio, Kotlin, Xml",
+    "platform":"Android"
   },
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "Package-Bytes Image Viewer",
+    "description": "You can use it when: Your GET IMAGE API returns Uint8List",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/bytes_image_viewer",
+    "tools":"Android Studio, Flutter, dart",
+    "platform":"Web, Android, iOS, Linux, Mac"
+
   },
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "Call Counter",
+    "description": "Counts your call and sends data to the server in the background",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/call_count",
+    "tools":"Android Studio, Kotlin, Xml",
+    "platform":"Android"
   },
   {
-    "name": "ABC Projects",
-    "description": "description Projects",
+    "name": "App Opener",
+    "description": "Short link generator app",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/UTube"
+    "github": "https://github.com/androidshashi/app_open",
+    "tools":"Android Studio, Flutter, dart",
+    "platform":"Android"
+  },
+
+  {
+    "name": "Firebase Twitter Login Plugin",
+    "description": "WIP: A Twitter plugin for flutter",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://github.com/androidshashi",
+    "tools":"Android Studio, Flutter, dart",
+    "platform":"Android, iOS"
+  },
+
+  {
+    "name": "Keyword Research Tool",
+    "description": "A keyword research tool",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://play.google.com/store/apps/details?id=com.keyword.research.tool&hl=en&gl=US",
+    "tools":"Android Studio, Flutter, dart, python",
+    "platform":"Android"
+  },
+
+  {
+    "name": "App Update checker",
+    "description": "An android library to check update on google plays store",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://github.com/shashifreeze/AppUpdateChecker",
+    "tools":"Android Studio, Java",
+    "platform":"Android"
   }
 ]

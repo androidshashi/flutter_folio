@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
 import 'package:flutter_folio/constants/dimen.dart';
@@ -12,8 +11,7 @@ class MySkills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Selector<HomeViewModel, List<String>>(
-      builder: (context, mySkills, child) => BorderedContainer(
-          onTap: null,
+      builder: (context, mySkills, child) => Container(
           padding: EdgeInsets.symmetric(
               vertical: Dimen.getCurrentWidth(context) * 0.010),
           child: Wrap(
@@ -23,10 +21,10 @@ class MySkills extends StatelessWidget {
                   mySkills.length,
                   (index) => Chip(
                         labelStyle: subTitleStyle.copyWith(
-                            color: AppColor.onPrimary,
+                            color: AppColor.primary,
                             fontSize: Dimen.getProfilePicRadius(context) * 0.2),
                         label: Text(mySkills[index]),
-                        backgroundColor: AppColor.primary,
+                        backgroundColor: AppColor.black,
                       )))),
       selector: (p0, p1) => p1.mySkills,
     );

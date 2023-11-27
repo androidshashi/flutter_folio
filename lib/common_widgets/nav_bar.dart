@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_color.dart';
+import 'package:flutter_folio/constants/app_image.dart';
 import 'package:flutter_folio/constants/app_localization.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
 import 'package:flutter_folio/constants/dimen.dart';
+import 'package:flutter_folio/view_model/home_viewmodel.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 AppBar? customAppBar(BuildContext context) {
   return AppBar(
@@ -14,51 +18,34 @@ AppBar? customAppBar(BuildContext context) {
             "<${AppLocalization.siteName}/>",
             style: titleStyle,
           )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Spacer(),
-              ShadowedContainer(
-                onTap: () {},
-                child: Text(
-                  AppLocalization.siteName,
-                  style: titleStyle,
+        : Padding(
+            padding: EdgeInsets.symmetric(
+                vertical: 16.0,
+                horizontal: Dimen.getCurrentWidth(context) * 0.10),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ShadowedContainer(
+                  onTap: () {},
+                  child: Text(
+                    AppLocalization.siteName,
+                    style: titleStyle,
+                  ),
                 ),
-              ),
-              const Spacer(),
-              BorderedContainer(
-                onTap: () {},
-                child: Text(
-                  "Projects",
-                  style: titleStyle,
+                TextButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse(context
+                        .read<HomeViewModel>()
+                        .aboutMeModel!
+                        .resumeLink!));
+                  },
+                  child: Text(
+                    AppLocalization.downloadResume,
+                  ),
                 ),
-              ),
-              const Spacer(),
-              BorderedContainer(
-                onTap: () {},
-                child: Text(
-                  "Contact me",
-                  style: titleStyle,
-                ),
-              ),
-              const Spacer(),
-              BorderedContainer(
-                onTap: () {},
-                child: Text(
-                  "About",
-                  style: titleStyle,
-                ),
-              ),
-              const Spacer(),
-              BorderedContainer(
-                onTap: () {},
-                child: Text(
-                  "Linked IN",
-                  style: titleStyle,
-                ),
-              ),
-              const Spacer(),
-            ],
+              ],
+            ),
           ),
   );
 }
@@ -68,29 +55,43 @@ Widget? customDrawer(BuildContext context) {
     return Drawer(
       backgroundColor: AppColor.black,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ShadowedContainer(
-            onTap: () {},
-            child: Text(
-              "Menu",
-              style: titleStyle,
+          const SizedBox(
+            height: 20,
+          ),
+          CircleAvatar(
+            backgroundColor: AppColor.onPrimary,
+            radius: Dimen.getProfilePicRadius(context),
+            child: CircleAvatar(
+              backgroundColor: AppColor.onPrimary,
+              radius: Dimen.getProfilePicRadius(context) - 5,
+              backgroundImage: const AssetImage(AppImage.profile),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            "Email: ${context.watch<HomeViewModel>().aboutMeModel?.email}",
+            style: headingTxtStyle.copyWith(
+              fontSize: Dimen.getCurrentWidth(context) * 0.03,
             ),
           ),
           Text(
-            "Projects",
-            style: titleStyle.copyWith(color: AppColor.primary),
+            "Phone: ${context.watch<HomeViewModel>().aboutMeModel?.contactNo}",
+            style: headingTxtStyle.copyWith(
+              fontSize: Dimen.getCurrentWidth(context) * 0.03,
+            ),
           ),
-          Text(
-            "Contact me",
-            style: titleStyle.copyWith(color: AppColor.primary),
-          ),
-          Text(
-            "About",
-            style: titleStyle.copyWith(color: AppColor.primary),
-          ),
-          Text(
-            "Linked IN",
-            style: titleStyle.copyWith(color: AppColor.primary),
+          TextButton(
+            onPressed: () {
+              launchUrl(Uri.parse(
+                  context.read<HomeViewModel>().aboutMeModel!.resumeLink!));
+            },
+            child: Text(
+              AppLocalization.downloadResume,
+            ),
           ),
         ],
       ),

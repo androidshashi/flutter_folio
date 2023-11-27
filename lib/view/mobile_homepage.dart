@@ -7,6 +7,7 @@ import 'package:flutter_folio/common_widgets/profile_picture.dart';
 import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/app_localization.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
+import 'package:flutter_folio/constants/dimen.dart';
 import 'package:flutter_folio/model/project_model.dart';
 import 'package:flutter_folio/view_model/home_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -39,10 +40,7 @@ class MobileHomePage extends StatelessWidget {
             SizedBox(
               height: constraints.maxWidth * 0.05,
             ),
-            SizedBox(
-                height: constraints.maxHeight * 0.6,
-                width: constraints.maxWidth,
-                child: const MyTimeLine()),
+            const MyTimeLine(),
             SizedBox(
               height: constraints.maxWidth * 0.05,
             ),
@@ -69,10 +67,7 @@ class MobileHomePage extends StatelessWidget {
             SizedBox(
               height: constraints.maxWidth * 0.05,
             ),
-            SizedBox(
-                height: constraints.maxHeight * 0.6,
-                width: constraints.maxWidth,
-                child: _getMobileProjects()),
+            _getMobileProjects(),
           ],
         ),
       ),
@@ -81,18 +76,22 @@ class MobileHomePage extends StatelessWidget {
 
   Widget _getMobileProjects() {
     return Selector<HomeViewModel, List<ProjectModel>>(
-      builder: (context, projectList, child) => ListView.separated(
-          itemBuilder: (context, index) => MobileProjectWidget(
-                onTap: () {},
-                imageUrl: projectList[index].image!,
-                title: projectList[index].name!,
-                description: projectList[index].description!,
-                githubUrl: projectList[index].github!,
-              ),
-          separatorBuilder: (context, index) => const SizedBox(
-                height: 10,
-              ),
-          itemCount: projectList.length),
+      builder: (context, projectList, child) => SizedBox(
+        height: Dimen.getCurrentWidth(context) * 0.7 * projectList.length,
+        child: ListView.separated(
+            itemBuilder: (context, index) => MobileProjectWidget(
+                  imageUrl: projectList[index].image!,
+                  title: projectList[index].name!,
+                  description: projectList[index].description!,
+                  githubUrl: projectList[index].github!,
+                  tools: projectList[index].tools!,
+                  platform: projectList[index].platform!,
+                ),
+            separatorBuilder: (context, index) => const SizedBox(
+                  height: 10,
+                ),
+            itemCount: projectList.length),
+      ),
       selector: (p0, p1) => p1.myProjects,
     );
   }

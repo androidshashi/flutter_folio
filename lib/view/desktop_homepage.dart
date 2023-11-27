@@ -18,7 +18,6 @@ class DesktopHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = Dimen.getCurrentWidth(context);
-    double height = Dimen.getCurrentWidth(context);
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(
           vertical: width * 0.10, horizontal: width * 0.10),
@@ -40,8 +39,7 @@ class DesktopHomePage extends StatelessWidget {
             style: subHeadingTxtStyle,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(
-              height: width * 0.6, width: width, child: const MyTimeLine()),
+          const MyTimeLine(),
           Text(
             AppLocalization.mySkills,
             style: subHeadingTxtStyle,
@@ -63,7 +61,7 @@ class DesktopHomePage extends StatelessWidget {
             height: width * 0.03,
           ),
           SizedBox(
-              height: height * 0.6,
+              height: Dimen.isTablet(context) ? width * 0.9 : width * 0.4,
               width: double.infinity,
               child: _getDesktopProjects(context)),
           SizedBox(
@@ -84,11 +82,12 @@ class DesktopHomePage extends StatelessWidget {
             childAspectRatio: 1.6,
             crossAxisCount: Dimen.getProjectItemInARow(context)),
         itemBuilder: (context, index) => DesktopProjectWidget(
-          onTap: () {},
           imageUrl: projectList[index].image!,
           title: projectList[index].name!,
           description: projectList[index].description!,
           githubUrl: projectList[index].github!,
+          tools: projectList[index].tools!,
+          platform: projectList[index].platform!,
         ),
       ),
       selector: (p0, p1) => p1.myProjects,

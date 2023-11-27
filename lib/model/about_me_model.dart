@@ -19,18 +19,19 @@ class AboutMeModel {
   String? github;
   String? myWork;
   String? aboutMe;
+  String? resumeLink;
 
-  AboutMeModel({
-    this.developerName,
-    this.email,
-    this.contactNo,
-    this.linkedIn,
-    this.pubDev,
-    this.facebook,
-    this.github,
-    this.myWork,
-    this.aboutMe,
-  });
+  AboutMeModel(
+      {this.developerName,
+      this.email,
+      this.contactNo,
+      this.linkedIn,
+      this.pubDev,
+      this.facebook,
+      this.github,
+      this.myWork,
+      this.aboutMe,
+      this.resumeLink});
 
   factory AboutMeModel.fromJson(Map<String, dynamic> json) => AboutMeModel(
         developerName: json["developerName"],
@@ -42,6 +43,7 @@ class AboutMeModel {
         github: json["github"],
         myWork: json["myWork"],
         aboutMe: json["aboutMe"],
+        resumeLink: json["resumeLink"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -54,5 +56,6 @@ class AboutMeModel {
         "github": github,
         "myWork": myWork,
         "aboutMe": aboutMe,
+        "resumeLink": resumeLink,
       };
 }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_image.dart';
 import 'package:flutter_folio/constants/dimen.dart';
+import 'package:flutter_folio/view_model/home_viewmodel.dart';
+import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialContainer extends StatelessWidget {
   const SocialContainer({Key? key}) : super(key: key);
@@ -21,7 +24,10 @@ class SocialContainer extends StatelessWidget {
             height: iconSize,
             width: iconSize,
           ),
-          onTap: () {},
+          onTap: () {
+            launchUrl(
+                Uri.parse(context.read<HomeViewModel>().aboutMeModel!.pubDev!));
+          },
         ),
         SizedBox(
           width: iconSize,
@@ -43,7 +49,10 @@ class SocialContainer extends StatelessWidget {
             height: iconSize,
             width: iconSize,
           ),
-          onTap: () {},
+          onTap: () {
+            launchUrl(
+                Uri.parse(context.read<HomeViewModel>().aboutMeModel!.github!));
+          },
         ),
         SizedBox(
           width: iconSize,

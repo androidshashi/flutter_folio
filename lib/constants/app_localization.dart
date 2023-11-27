@@ -9,6 +9,8 @@ class AppLocalization {
   static String mySkills = "My Skills";
 
   static String experience = "Experience";
+
+  static String downloadResume = "Download Resume";
 }
 
 // Json files

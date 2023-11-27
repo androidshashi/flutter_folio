@@ -15,19 +15,24 @@ class ProjectModel {
   String? description;
   String? image;
   String? github;
+  String? tools;
+  String? platform;
 
-  ProjectModel({
-    this.name,
-    this.description,
-    this.image,
-    this.github,
-  });
+  ProjectModel(
+      {this.name,
+      this.description,
+      this.image,
+      this.github,
+      this.tools,
+      this.platform});
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) => ProjectModel(
         name: json["name"],
         description: json["description"],
         image: json["image"],
         github: json["github"],
+        tools: json["tools"],
+        platform: json["platform"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,5 +40,7 @@ class ProjectModel {
         "description": description,
         "image": image,
         "github": github,
+        "tools": tools,
+        "platform": platform,
       };
 }
