@@ -18,6 +18,9 @@ class MyTimeLine extends StatelessWidget {
               height: myExperienceList.length *
                   (Dimen.isMobile(context) ? 110 : 120),
               child: Timeline.tileBuilder(
+                physics: Dimen.isMobile(context)
+                    ? const NeverScrollableScrollPhysics()
+                    : null,
                 theme: TimelineThemeData(
                   connectorTheme: ConnectorThemeData(
                     thickness: 3.0,

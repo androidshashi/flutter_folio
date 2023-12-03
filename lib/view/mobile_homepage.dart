@@ -77,8 +77,11 @@ class MobileHomePage extends StatelessWidget {
   Widget _getMobileProjects() {
     return Selector<HomeViewModel, List<ProjectModel>>(
       builder: (context, projectList, child) => SizedBox(
-        height: Dimen.getCurrentWidth(context) * 0.7 * projectList.length,
+        height: Dimen.getCurrentWidth(context) * 0.8 * projectList.length,
         child: ListView.separated(
+            physics: Dimen.isMobile(context)
+                ? const NeverScrollableScrollPhysics()
+                : null,
             itemBuilder: (context, index) => MobileProjectWidget(
                   imageUrl: projectList[index].image!,
                   title: projectList[index].name!,
