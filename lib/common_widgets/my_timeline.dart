@@ -40,7 +40,7 @@ class MyTimeLine extends StatelessWidget {
                       style: titleTextStyle.copyWith(
                           color: AppColor.primary,
                           fontSize: Dimen.getProfilePicRadius(context) *
-                              (Dimen.isDesktop(context) ? 0.1 : 0.15)),
+                              (Dimen.isDesktop(context) ? 0.15 : 0.20)),
                     ),
                   ),
                   itemCount: myExperienceList.length,

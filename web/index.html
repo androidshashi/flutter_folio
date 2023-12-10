@@ -1,139 +1,140 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
+    <base href="$FLUTTER_BASE_HREF">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A portfolio of flutter developer in flutter web.">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A portfolio of flutter developer in flutter web.">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutter_folio">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="flutter_folio">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>flutter_folio</title>
-  <link rel="manifest" href="manifest.json">
-<!--  PUT THIS BELOW CODE TO EVERY WEB BUILD FOR SPLASH SCREEN-->
-<!--  <style>-->
-<!--            html, body {-->
-<!--      height: 100%;-->
-<!--      margin: 0;-->
-<!--      font-family: monospace;-->
-<!--    }-->
+    <title>flutter_folio</title>
+    <link rel="manifest" href="manifest.json">
+    <!--  PUT THIS BELOW CODE TO EVERY WEB BUILD FOR SPLASH SCREEN-->
+    <style>
+            html, body {
+      height: 100%;
+      margin: 0;
+      font-family: monospace;
+    }
 
-<!--    body {-->
-<!--      display: flex;-->
-<!--      align-items: center;-->
-<!--      justify-content: center;-->
-<!--      height: 100%;-->
-<!--      background-color: #008080;-->
-<!--      overflow: hidden;-->
-<!--    }-->
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background-color: #000000;
+      overflow: hidden;
+    }
 
-<!--    .sentence {-->
-<!--      color: #DAFDBA;-->
-<!--      font-size: 3em;-->
-<!--      position: relative;-->
-<!--    }-->
-
-
-<!--.sentence::after {-->
-<!--  content: '';-->
-<!--  position: absolute;-->
-<!--  right: -20px;-->
-<!--  bottom: 6px;-->
-<!--    width: 14px;-->
-<!--    height: 2px;-->
-<!--  background-color: #DAFDBA;-->
-<!--  animation: blink 0.5s linear infinite;-->
-<!--}-->
-
-<!--    @keyframes blink {-->
-<!--      0% {-->
-<!--        opacity: 1;-->
-<!--      }-->
-<!--      100% {-->
-<!--        opacity: 0;-->
-<!--      }-->
-<!--    }-->
+    .sentence {
+      color: #008080;
+      font-size: 3em;
+      position: relative;
+    }
 
 
+.sentence::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  bottom: 6px;
+    width: 14px;
+    height: 2px;
+  background-color: #008080;
+  animation: blink 0.5s linear infinite;
+}
 
-<!--    </style>-->
-<!--  <script>-->
-<!--        document.addEventListener('DOMContentLoaded', function () {-->
-<!--  const sentences = [-->
-<!--    'Android',-->
-<!--    'IOS',-->
-<!--    'Kotlin',-->
-<!--    'JAVA',-->
-<!--    'flutter'-->
-<!--  ];-->
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
 
-<!--  let currentIndex = 0;-->
-<!--  let offset = 0;-->
-<!--  const sentenceElement = document.querySelector('.sentence');-->
-<!--  let forwards = true;-->
-<!--  let skipCount = 0;-->
-<!--  const skipDelay = 15;-->
-<!--  const speed = 70;-->
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+  const sentences = [
+    'flutter',
+    'Android',
+    'IOS',
+    'Kotlin',
+    'JAVA'
 
-<!--  const updateSentence = () => {-->
-<!--    sentenceElement.textContent = sentences[currentIndex].substring(0, offset);-->
-<!--  };-->
+  ];
 
-<!--  const handleAnimation = () => {-->
-<!--    if (forwards) {-->
-<!--      if (offset >= sentences[currentIndex].length) {-->
-<!--        if (++skipCount === skipDelay) {-->
-<!--          forwards = false;-->
-<!--          skipCount = 0;-->
-<!--        }-->
-<!--      }-->
-<!--    } else if (offset === 0) {-->
-<!--      forwards = true;-->
-<!--      currentIndex = (currentIndex + 1) % sentences.length;-->
-<!--    }-->
+  let currentIndex = 0;
+  let offset = 0;
+  const sentenceElement = document.querySelector('.sentence');
+  let forwards = true;
+  let skipCount = 0;
+  const skipDelay = 15;
+  const speed = 70;
 
-<!--    if (skipCount === 0) {-->
-<!--      forwards ? offset++ : offset&#45;&#45;;-->
-<!--    }-->
+  const updateSentence = () => {
+    sentenceElement.textContent = sentences[currentIndex].substring(0, offset);
+  };
 
-<!--    updateSentence();-->
-<!--  };-->
+  const handleAnimation = () => {
+    if (forwards) {
+      if (offset >= sentences[currentIndex].length) {
+        if (++skipCount === skipDelay) {
+          forwards = false;
+          skipCount = 0;
+        }
+      }
+    } else if (offset === 0) {
+      forwards = true;
+      currentIndex = (currentIndex + 1) % sentences.length;
+    }
 
-<!--  setInterval(handleAnimation, speed);-->
-<!--});-->
+    if (skipCount === 0) {
+      forwards ? offset++ : offset--;
+    }
+
+    updateSentence();
+  };
+
+  setInterval(handleAnimation, speed);
+});
 
 
-<!--    </script>-->
-  <script>
+    </script>
+    <script>
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
 </head>
 <body>
-  <script>
+<div class="sentence"></div>
+<script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
@@ -147,7 +148,8 @@
         }
       });
     });
-  </script>
+
+</script>
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
@@ -171,5 +173,6 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+
 </script>
 </html>

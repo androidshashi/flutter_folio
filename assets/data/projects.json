@@ -7,6 +7,15 @@
     "tools":"Android Studio, Kotlin, Xml",
     "platform":"Android"
   },
+
+  {
+    "name": "Keyword Research Tool",
+    "description": "A keyword research tool",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://play.google.com/store/apps/details?id=com.keyword.research.tool&hl=en&gl=US",
+    "tools":"Android Studio, Flutter, dart, python",
+    "platform":"Android"
+  },
   {
     "name": "Flutter Developer Folio Template",
     "description": "A fully responsive developer portfolio in flutter.",
@@ -47,14 +56,7 @@
     "tools":"Android Studio, Flutter, dart",
     "platform":"Web, Android, iOS, Linux, Mac"
   },
-  {
-    "name": "Call Counter",
-    "description": "Counts your call and sends data to the server in the background",
-    "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://github.com/androidshashi/call_count",
-    "tools":"Android Studio, Kotlin, Xml",
-    "platform":"Android"
-  },
+
   {
     "name": "App Opener",
     "description": "Short link generator app",
@@ -64,19 +66,18 @@
     "platform":"Android"
   },
 
-
-
   {
-    "name": "Keyword Research Tool",
-    "description": "A keyword research tool",
+    "name": "WaBuddy",
+    "description": "Helps you to hide blue tick and many other features.",
     "image": "https://accelerator.github.com/og-image.jpg",
-    "github": "https://play.google.com/store/apps/details?id=com.keyword.research.tool&hl=en&gl=US",
-    "tools":"Android Studio, Flutter, dart, python",
+    "github": "https://play.google.com/store/apps/details?id=com.wabuddy.tool&hl=en_IN&gl=US",
+    "tools":"Android Studio, kotlin",
     "platform":"Android"
   },
 
+
   {
-    "name": "App Update checker",
+    "name": "Library : App Update checker",
     "description": "An android library to check update on google plays store",
     "image": "https://accelerator.github.com/og-image.jpg",
     "github": "https://github.com/shashifreeze/AppUpdateChecker",
