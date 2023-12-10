@@ -53,7 +53,7 @@ AppBar? customAppBar(BuildContext context) {
 Widget? customDrawer(BuildContext context) {
   if (Dimen.isMobile(context)) {
     return Drawer(
-      backgroundColor: AppColor.black,
+      backgroundColor: AppColor.primaryDark,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

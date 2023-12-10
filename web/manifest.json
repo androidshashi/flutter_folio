@@ -1,11 +1,11 @@
 {
-    "name": "flutter_folio",
-    "short_name": "flutter_folio",
+    "name": "Shashi Kumar",
+    "short_name": "AndroidShashi",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
-    "description": "A portfolio of flutter developer in flutter web.",
+    "description": "Senior Mobile App Developer",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

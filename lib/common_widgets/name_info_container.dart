@@ -19,7 +19,7 @@ class NameInfoContainer extends StatelessWidget {
           : CrossAxisAlignment.start,
       children: [
         Text(
-          "Hi, There,",
+          "Hello there,",
           style: headingTxtStyle.copyWith(
             fontSize: deviceWidth * 0.05,
           ),

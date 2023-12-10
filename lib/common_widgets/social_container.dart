@@ -11,7 +11,7 @@ class SocialContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double iconSize = Dimen.getCurrentWidth(context) * 0.04;
+    double iconSize = Dimen.getCurrentWidth(context) * 0.05;
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: Dimen.isMobile(context)
