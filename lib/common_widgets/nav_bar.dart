@@ -1,3 +1,5 @@
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_color.dart';
@@ -86,8 +88,15 @@ Widget? customDrawer(BuildContext context) {
           ),
           TextButton(
             onPressed: () {
-              launchUrl(Uri.parse(
-                  context.read<HomeViewModel>().aboutMeModel!.resumeLink!));
+              //only for flutter web mobile
+              html.AnchorElement anchorElement = html.AnchorElement(
+                  href:
+                      context.read<HomeViewModel>().aboutMeModel!.resumeLink!);
+              anchorElement.download =
+                  context.read<HomeViewModel>().aboutMeModel!.resumeLink!;
+              anchorElement.click();
+              // launchUrl(Uri.parse(
+              //     context.read<HomeViewModel>().aboutMeModel!.resumeLink!));
             },
             child: Text(
               AppLocalization.downloadResume,

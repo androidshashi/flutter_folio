@@ -4,10 +4,15 @@ import 'package:flutter_folio/constants/dimen.dart';
 
 class ShadowedContainer extends StatelessWidget {
   const ShadowedContainer(
-      {Key? key, required this.child, required this.onTap, this.padding})
+      {Key? key,
+      required this.child,
+      required this.onTap,
+      this.padding,
+      this.onHover})
       : super(key: key);
   final Widget child;
   final VoidCallback onTap;
+  final void Function(bool)? onHover;
   final EdgeInsets? padding;
 
   @override
@@ -15,6 +20,7 @@ class ShadowedContainer extends StatelessWidget {
     double deviceWidth = Dimen.getCurrentWidth(context);
     return InkWell(
       onTap: onTap,
+      onHover: onHover,
       child: Container(
         padding: padding ?? EdgeInsets.all(deviceWidth * 0.004),
         alignment: Alignment.center,
