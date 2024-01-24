@@ -1,9 +1,15 @@
 [
   {
-    "title": "Software Associate",
-    "year": "2018",
+    "title": "Senior Software Engineer",
+    "year": "2021 - Present",
+    "company": "Tech-dock Labs",
+    "location": "Lucknow, Uttar Pradesh"
+  },
+  {
+    "title": "Senior Software Engineer",
     "company": "Capgemini",
-    "location": "Bengaluru, Karnataka"
+    "year": "2020",
+    "location": "Kolkata, West Bengal"
   },
   {
     "title": "Software Engineer",
@@ -12,15 +18,10 @@
     "location": "Bengaluru, Karnataka"
   },
   {
-    "title": "Senior Software Engineer",
+    "title": "Software Associate",
+    "year": "2018",
     "company": "Capgemini",
-    "year": "2020",
     "location": "Bengaluru, Karnataka"
-  },
-  {
-    "title": "Senior Software Engineer",
-    "year": "2021",
-    "company": "Tech-dock Labs",
-    "location": "Lucknow, Uttar Pradesh"
   }
+
 ]
