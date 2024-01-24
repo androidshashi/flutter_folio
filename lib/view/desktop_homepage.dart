@@ -60,10 +60,7 @@ class DesktopHomePage extends StatelessWidget {
           SizedBox(
             height: width * 0.03,
           ),
-          SizedBox(
-              height: Dimen.isTablet(context) ? width * 0.9 : width * 0.4,
-              width: double.infinity,
-              child: _getDesktopProjects(context)),
+          _getDesktopProjects(context),
           SizedBox(
             height: width * 0.03,
           ),
@@ -74,20 +71,24 @@ class DesktopHomePage extends StatelessWidget {
 
   Widget _getDesktopProjects(BuildContext context) {
     return Selector<HomeViewModel, List<ProjectModel>>(
-      builder: (context, projectList, child) => GridView.builder(
-        itemCount: projectList.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
-            childAspectRatio: 1.6,
-            crossAxisCount: Dimen.getProjectItemInARow(context)),
-        itemBuilder: (context, index) => DesktopProjectWidget(
-          imageUrl: projectList[index].image!,
-          title: projectList[index].name!,
-          description: projectList[index].description!,
-          githubUrl: projectList[index].github!,
-          tools: projectList[index].tools!,
-          platform: projectList[index].platform!,
+      builder: (context, projectList, child) => GridView.count(
+        crossAxisCount: Dimen.getProjectItemInARow(context),
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+        childAspectRatio: 1.6,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        children: List.generate(
+          projectList.length,
+
+          (index) => DesktopProjectWidget(
+            imageUrl: projectList[index].image!,
+            title: projectList[index].name!,
+            description: projectList[index].description!,
+            githubUrl: projectList[index].github!,
+            tools: projectList[index].tools!,
+            platform: projectList[index].platform!,
+          ),
         ),
       ),
       selector: (p0, p1) => p1.myProjects,

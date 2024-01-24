@@ -28,33 +28,37 @@ class MobileProjectWidget extends StatelessWidget {
     return BorderedContainer(
         onTap: () => launchUrl(Uri.parse(githubUrl)),
         width: double.infinity,
-        height: Dimen.getCurrentWidth(context) * 0.7,
+        height: Dimen.getCurrentWidth(context) * 0.5,
         padding: EdgeInsets.zero,
+        margin:  EdgeInsets.only(bottom: Dimen.getProfilePicRadius(context)*0.5),
         child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(alignment: Alignment.center, children: [
-                Image.network(
-                  imageUrl,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                Positioned(
-                    top: 0,
-                    right: 0,
-                    child: ShadowedContainer(
-                        onTap: () {},
-                        child: const Image(
-                          image: AssetImage(
-                            AppImage.git,
-                          ),
-                          height: 20,
-                          width: 20,
-                        ))),
-              ]),
+              Expanded(
+                flex: 3,
+                child: Stack(alignment: Alignment.center, children: [
+                  Image.network(
+                    imageUrl,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                      top: 0,
+                      right: 0,
+                      child: ShadowedContainer(
+                          onTap: () {},
+                          child: const Image(
+                            image: AssetImage(
+                              AppImage.git,
+                            ),
+                            height: 20,
+                            width: 20,
+                          ))),
+                ]),
+              ),
               Padding(
-                padding: const EdgeInsets.only(top: 4.0, left: 8, right: 8),
+                padding: const EdgeInsets.only(top: 10.0, left: 8, right: 8),
                 child: Text(
                   title,
                   maxLines: 1,
@@ -78,7 +82,7 @@ class MobileProjectWidget extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: titleStyle.copyWith(
-                      color: AppColor.onPrimary, fontSize: 10),
+                      color: AppColor.onPrimary, fontSize: 8.0),
                 ),
               ),
               Expanded(

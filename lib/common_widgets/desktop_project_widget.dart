@@ -54,7 +54,7 @@ class DesktopProjectWidget extends StatelessWidget {
                 ]),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(top: 10, left: 8, right: 8),
                 child: Text(
                   title,
                   maxLines: 1,

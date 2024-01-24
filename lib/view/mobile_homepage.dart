@@ -68,6 +68,10 @@ class MobileHomePage extends StatelessWidget {
               height: constraints.maxWidth * 0.05,
             ),
             _getMobileProjects(),
+
+            SizedBox(
+              height: constraints.maxWidth * 0.05,
+            ),
           ],
         ),
       ),
@@ -76,25 +80,19 @@ class MobileHomePage extends StatelessWidget {
 
   Widget _getMobileProjects() {
     return Selector<HomeViewModel, List<ProjectModel>>(
-      builder: (context, projectList, child) => SizedBox(
-        height: Dimen.getCurrentWidth(context) * 0.8 * projectList.length,
-        child: ListView.separated(
-            physics: Dimen.isMobile(context)
-                ? const NeverScrollableScrollPhysics()
-                : null,
-            itemBuilder: (context, index) => MobileProjectWidget(
-                  imageUrl: projectList[index].image!,
-                  title: projectList[index].name!,
-                  description: projectList[index].description!,
-                  githubUrl: projectList[index].github!,
-                  tools: projectList[index].tools!,
-                  platform: projectList[index].platform!,
-                ),
-            separatorBuilder: (context, index) => const SizedBox(
-                  height: 10,
-                ),
-            itemCount: projectList.length),
-      ),
+      builder: (context, projectList, child) => ListView(
+        shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          children: List.generate(
+              projectList.length,
+              (index) => MobileProjectWidget(
+                    imageUrl: projectList[index].image!,
+                    title: projectList[index].name!,
+                    description: projectList[index].description!,
+                    githubUrl: projectList[index].github!,
+                    tools: projectList[index].tools!,
+                    platform: projectList[index].platform!,
+                  ))),
       selector: (p0, p1) => p1.myProjects,
     );
   }

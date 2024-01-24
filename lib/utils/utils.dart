@@ -3,6 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_folio/constants/app_color.dart';
+import 'package:timelines/timelines.dart';
 
 void showSnackBar(
     {required BuildContext context,
@@ -37,3 +38,17 @@ void debugLog(String? text) {
 void hideKeyBoard() {
   FocusManager.instance.primaryFocus?.unfocus();
 }
+
+
+/// Theme related
+
+final TimelineThemeData timelineThemeData = TimelineThemeData(
+  connectorTheme: ConnectorThemeData(
+    thickness: 3.0,
+    color: AppColor.primary,
+  ),
+  indicatorTheme: IndicatorThemeData(
+    size: 15.0,
+    color: AppColor.primary.shade400,
+  ),
+);

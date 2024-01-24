@@ -7,6 +7,8 @@ import 'package:flutter_folio/view/mobile_homepage.dart';
 import 'package:flutter_folio/view_model/home_viewmodel.dart';
 import 'package:provider/provider.dart';
 
+import '../common_widgets/footer_widget.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
         tablet: DesktopHomePage(),
         desktop: DesktopHomePage(),
       ),
+      bottomNavigationBar: FooterWidget(),
     );
   }
 }

@@ -48,7 +48,7 @@ class BorderedContainer extends StatelessWidget {
       this.padding,
       this.margin,
       this.width,
-      this.height})
+      this.height, this.color,  this.roundCorner=true})
       : super(key: key);
   final Widget child;
   final VoidCallback? onTap;
@@ -56,6 +56,8 @@ class BorderedContainer extends StatelessWidget {
   final EdgeInsets? margin;
   final double? width;
   final double? height;
+  final Color? color;
+  final bool roundCorner;
   @override
   Widget build(BuildContext context) {
     double deviceWidth = Dimen.getCurrentWidth(context);
@@ -65,11 +67,13 @@ class BorderedContainer extends StatelessWidget {
         margin: margin,
         width: width,
         height: height,
+        clipBehavior: Clip.hardEdge,
         padding: padding ?? EdgeInsets.all(deviceWidth * 0.004),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            border: Border.all(color: AppColor.primary, width: 0.7)),
+            color: color??Colors.white10 ,
+            borderRadius: roundCorner? BorderRadius.circular(5):null,
+            ),
         child: child,
       ),
     );

@@ -7,4 +7,6 @@ class AppColor {
   static var black = Colors.black;
   static var black54 = Colors.black54;
   static var transparent = Colors.transparent;
+
+  static var white = Colors.white;
 }
