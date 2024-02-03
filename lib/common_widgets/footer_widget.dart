@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_folio/common_widgets/styled_container.dart';
 import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/custom_styles.dart';
+import 'package:flutter_folio/constants/dimen.dart';
 import 'package:flutter_folio/view_model/home_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,11 +14,12 @@ class FooterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BorderedContainer(
         width: double.infinity,
-        height: 40,
+        height: Dimen.isDesktop(context)?40:20,
         onTap: null,
         roundCorner: false,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
                 onTap: () => launchUrl(Uri.parse(
@@ -25,7 +27,7 @@ class FooterWidget extends StatelessWidget {
                 child: Text(
                   "Designed & Developed by Shashi Kumar",
                   textAlign: TextAlign.center,
-                  style: subTitleTextStyle.copyWith(color: AppColor.primary),
+                  style: subTitleTextStyle.copyWith(color: AppColor.primary, fontSize: Dimen.isDesktop(context)?15:12),
                 ))
           ],
         ));

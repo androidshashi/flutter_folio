@@ -56,6 +56,15 @@ class MobileHomePage extends StatelessWidget {
             SizedBox(
               height: constraints.maxWidth * 0.05,
             ),
+            Text(
+              AppLocalization.myPackages,
+              style: subHeadingTxtStyle,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(
+              height: constraints.maxWidth * 0.05,
+            ),
+            _getMyPackages(),
             SizedBox(
               height: constraints.maxWidth * 0.05,
             ),
@@ -70,7 +79,7 @@ class MobileHomePage extends StatelessWidget {
             _getMobileProjects(),
 
             SizedBox(
-              height: constraints.maxWidth * 0.05,
+              height: constraints.maxWidth * 0.02,
             ),
           ],
         ),
@@ -94,6 +103,25 @@ class MobileHomePage extends StatelessWidget {
                     platform: projectList[index].platform!,
                   ))),
       selector: (p0, p1) => p1.myProjects,
+    );
+  }
+
+  Widget _getMyPackages() {
+    return Selector<HomeViewModel, List<ProjectModel>>(
+      builder: (context, packageList, child) => ListView(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          children: List.generate(
+              packageList.length,
+                  (index) => MobileProjectWidget(
+                imageUrl: packageList[index].image!,
+                title: packageList[index].name!,
+                description: packageList[index].description!,
+                githubUrl: packageList[index].github!,
+                tools: packageList[index].tools!,
+                platform: packageList[index].platform!,
+              ))),
+      selector: (p0, p1) => p1.myPackages,
     );
   }
 

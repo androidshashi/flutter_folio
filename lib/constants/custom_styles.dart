@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 final TextStyle titleStyle = GoogleFonts.exo2(
     color: AppColor.onPrimary, fontSize: 16, fontWeight: FontWeight.bold);
+
 final TextStyle subTitleStyle = GoogleFonts.exo2(
   fontWeight: FontWeight.w500,
   color: AppColor.onPrimary,

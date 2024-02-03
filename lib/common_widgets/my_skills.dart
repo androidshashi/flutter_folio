@@ -15,16 +15,16 @@ class MySkills extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               vertical: Dimen.getCurrentWidth(context) * 0.010),
           child: Wrap(
-              spacing: 10,
-              runSpacing: 10,
+              spacing: Dimen.isMobile(context)? 10: 20,
+              runSpacing: Dimen.isMobile(context)? 10: 20,
               children: List.generate(
                   mySkills.length,
                   (index) => Chip(
                         labelStyle: subTitleStyle.copyWith(
-                            color: AppColor.primary,
+                            color: AppColor.white,
                             fontSize: Dimen.getProfilePicRadius(context) * 0.2),
                         label: Text(mySkills[index]),
-                        backgroundColor: AppColor.black,
+                        backgroundColor: AppColor.primaryDark,
                       )))),
       selector: (p0, p1) => p1.mySkills,
     );

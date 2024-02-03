@@ -11,6 +11,7 @@ import 'package:flutter_folio/utils/utils.dart';
 
 class HomeViewModel extends ChangeNotifier {
   List<ProjectModel> myProjects = [];
+  List<ProjectModel> myPackages = [];
   List<String> mySkills = [];
   List<ExperienceModel> myExperience = [];
   AboutMeModel? aboutMeModel;
@@ -22,7 +23,22 @@ class HomeViewModel extends ChangeNotifier {
       myProjects = projectModelFromJson(response);
       notifyListeners();
     } on IOException catch (e) {
-      showSnackBar(context: context, content: e.toString(), success: false);
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString(), success: false);
+      }
+    }
+  }
+
+  Future<void> fetchMyPackages(BuildContext context) async {
+    if (myPackages.isNotEmpty) return;
+    try {
+      final String response = await rootBundle.loadString(packagesJson);
+      myPackages = projectModelFromJson(response);
+      notifyListeners();
+    } on IOException catch (e) {
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString(), success: false);
+      }
     }
   }
 
@@ -33,7 +49,9 @@ class HomeViewModel extends ChangeNotifier {
       mySkills = skillsModelFromJson(response).skills ?? [];
       notifyListeners();
     } on IOException catch (e) {
-      showSnackBar(context: context, content: e.toString(), success: false);
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString(), success: false);
+      }
     }
   }
 
@@ -44,7 +62,9 @@ class HomeViewModel extends ChangeNotifier {
       aboutMeModel = aboutMeModelFromJson(response);
       notifyListeners();
     } on IOException catch (e) {
-      showSnackBar(context: context, content: e.toString(), success: false);
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString(), success: false);
+      }
     }
   }
 
@@ -55,7 +75,9 @@ class HomeViewModel extends ChangeNotifier {
       myExperience = experienceModelFromJson(response);
       notifyListeners();
     } on IOException catch (e) {
-      showSnackBar(context: context, content: e.toString(), success: false);
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.toString(), success: false);
+      }
     }
   }
 }

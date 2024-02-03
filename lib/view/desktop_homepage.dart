@@ -53,6 +53,18 @@ class DesktopHomePage extends StatelessWidget {
             height: width * 0.05,
           ),
           Text(
+            AppLocalization.myPackages,
+            style: subHeadingTxtStyle,
+            overflow: TextOverflow.ellipsis,
+          ),
+          SizedBox(
+            height: width * 0.03,
+          ),
+          _getMyPackages(context),
+          SizedBox(
+            height: width * 0.03,
+          ),
+          Text(
             AppLocalization.myProjects,
             style: subHeadingTxtStyle,
             overflow: TextOverflow.ellipsis,
@@ -61,9 +73,7 @@ class DesktopHomePage extends StatelessWidget {
             height: width * 0.03,
           ),
           _getDesktopProjects(context),
-          SizedBox(
-            height: width * 0.03,
-          ),
+
         ],
       ),
     );
@@ -92,6 +102,31 @@ class DesktopHomePage extends StatelessWidget {
         ),
       ),
       selector: (p0, p1) => p1.myProjects,
+    );
+  }
+
+  Widget _getMyPackages(BuildContext context) {
+    return Selector<HomeViewModel, List<ProjectModel>>(
+      builder: (context, packageList, child) => GridView.count(
+        crossAxisCount: Dimen.getProjectItemInARow(context),
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
+        childAspectRatio: 1.6,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        children: List.generate(
+          packageList.length,
+              (index) => DesktopProjectWidget(
+            imageUrl: packageList[index].image!,
+            title: packageList[index].name!,
+            description: packageList[index].description!,
+            githubUrl: packageList[index].github!,
+            tools: packageList[index].tools!,
+            platform: packageList[index].platform!,
+          ),
+        ),
+      ),
+      selector: (p0, p1) => p1.myPackages,
     );
   }
 

@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
       homeViewModel.fetchAboutMe(context);
       homeViewModel.fetchExperience(context);
       homeViewModel.fetchMyProjects(context);
+      homeViewModel.fetchMyPackages(context);
       homeViewModel.fetchMySkills(context);
     });
     super.initState();

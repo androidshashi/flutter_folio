@@ -21,13 +21,13 @@ class MyTimeLine extends StatelessWidget {
               builder: TimelineTileBuilder.fromStyle(
                 contentsAlign: ContentsAlign.alternating,
                 contentsBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Text(
                     "${myExperienceList[index].year}, ${myExperienceList[index].location},\n${myExperienceList[index].title}\n(${myExperienceList[index].company})",
                     style: titleTextStyle.copyWith(
                         color: AppColor.primary,
                         fontSize: Dimen.getProfilePicRadius(context) *
-                            (Dimen.isDesktop(context) ? 0.15 : 0.20)),
+                            (Dimen.isDesktop(context) ? 0.20 : 0.30)),
                   ),
                 ),
                 itemCount: myExperienceList.length,

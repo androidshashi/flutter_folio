@@ -31,7 +31,7 @@ class ProfilePicture extends StatelessWidget {
           Text(
             "Email: ${context.watch<HomeViewModel>().aboutMeModel?.email}\nPhone: ${context.watch<HomeViewModel>().aboutMeModel?.contactNo}",
             style: headingTxtStyle.copyWith(
-              fontSize: Dimen.getCurrentWidth(context) * 0.01,
+              fontSize: Dimen.getCurrentWidth(context) * 0.02,
             ),
           ),
       ],

@@ -68,8 +68,7 @@ class DesktopProjectWidget extends StatelessWidget {
                   "Tools: $tools",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: titleStyle.copyWith(
-                      color: AppColor.onPrimary, fontSize: 12),
+                  style: subTitleTextStyle,
                 ),
               ),
               Padding(
@@ -78,8 +77,7 @@ class DesktopProjectWidget extends StatelessWidget {
                   "Supports $platform",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: titleStyle.copyWith(
-                      color: AppColor.onPrimary, fontSize: 12),
+                  style: subTitleTextStyle,
                 ),
               ),
               Expanded(
@@ -87,7 +85,7 @@ class DesktopProjectWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Text(
                     description,
-                    style: subTitleStyle.copyWith(fontSize: 10),
+                    style: subTitleTextStyle,
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),

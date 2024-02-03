@@ -1,0 +1,37 @@
+[
+
+  {
+    "name": "PLUGIN - Twitter Auth Firebase",
+    "description": "Twitter authentication plugin",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://pub.dev/packages/twitter_auth_firebase",
+    "tools":"Android Studio, Xcode, dart, swift, Flutter",
+    "platform":"Android | Ios"
+  },
+
+  {
+    "name": "PACKAGE - Bytes Image Viewer",
+    "description": "You can use it when: Your GET IMAGE API returns Uint8List",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://pub.dev/packages/bytes_image_viewer",
+    "tools":"Android Studio, Flutter, dart",
+    "platform":"Web | Android | iOS | Linux | Mac"
+  },
+  {
+    "name": "PACKAGE - Text Word Highlighter",
+    "description": "Highlight multiple word in a sentence",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://pub.dev/packages/text_word_highlighter",
+    "tools":"Android Studio, Flutter, dart",
+    "platform":"Web | Android | iOS | Linux | Mac"
+  },
+
+  {
+    "name": "Library : App Update checker",
+    "description": "An android library to check update on google plays store",
+    "image": "https://accelerator.github.com/og-image.jpg",
+    "github": "https://github.com/shashifreeze/AppUpdateChecker",
+    "tools":"Android Studio, Java",
+    "platform":"Android"
+  }
+]

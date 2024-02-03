@@ -28,7 +28,7 @@ class MobileProjectWidget extends StatelessWidget {
     return BorderedContainer(
         onTap: () => launchUrl(Uri.parse(githubUrl)),
         width: double.infinity,
-        height: Dimen.getCurrentWidth(context) * 0.5,
+        height: Dimen.getCurrentWidth(context) * 0.55,
         padding: EdgeInsets.zero,
         margin:  EdgeInsets.only(bottom: Dimen.getProfilePicRadius(context)*0.5),
         child: Column(
@@ -72,7 +72,7 @@ class MobileProjectWidget extends StatelessWidget {
                   "Tools: $tools",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: subTitleStyle.copyWith(color: AppColor.onPrimary),
+                  style:subTitleTextStyle,
                 ),
               ),
               Padding(
@@ -81,8 +81,7 @@ class MobileProjectWidget extends StatelessWidget {
                   "Supports: $platform",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: titleStyle.copyWith(
-                      color: AppColor.onPrimary, fontSize: 8.0),
+                  style: subTitleTextStyle,
                 ),
               ),
               Expanded(
@@ -90,7 +89,7 @@ class MobileProjectWidget extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                     description,
-                    style: subTitleStyle.copyWith(fontSize: 10),
+                    style: subTitleTextStyle,
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
