@@ -40,6 +40,9 @@ class DesktopHomePage extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           const MyTimeLine(),
+          SizedBox(
+            height: width * 0.03,
+          ),
           Text(
             AppLocalization.mySkills,
             style: subHeadingTxtStyle,
