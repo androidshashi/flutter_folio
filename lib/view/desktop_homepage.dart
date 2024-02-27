@@ -19,8 +19,8 @@ class DesktopHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = Dimen.getCurrentWidth(context);
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(
-          vertical: width * 0.10, horizontal: width * 0.10),
+      padding: EdgeInsets.only(
+          bottom: 20, left: width * 0.10, right: width*0.1, top: width*0.05),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

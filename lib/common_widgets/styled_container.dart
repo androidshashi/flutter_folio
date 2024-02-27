@@ -90,12 +90,10 @@ class _BorderedContainerState extends State<BorderedContainer> {
 
   @override
   Widget build(BuildContext context) {
-    double deviceWidth = Dimen.getCurrentWidth(context);
-
     return MouseRegion(
       onExit: (event) {
         setState(() {
-          borderColor = widget.color??Colors.white10;
+          borderColor = null;
         });
 
       },
@@ -115,8 +113,8 @@ class _BorderedContainerState extends State<BorderedContainer> {
           padding: widget.padding,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: widget.color,
-              border: Border.all(color: borderColor ??  widget.color??Colors.white10, width: 1),
+              color: widget.color??Colors.white10,
+              border: borderColor!=null? Border.all(color: borderColor!, width: 1): Border.all(),
               borderRadius: widget.roundCorner? BorderRadius.circular(5):null,
               ),
           duration: const Duration(milliseconds: 100),
