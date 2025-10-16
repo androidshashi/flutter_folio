@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_folio/constants/app_color.dart';
 import 'package:flutter_folio/constants/dimen.dart';
-import 'package:flutter_folio/utils/utils.dart';
 
 class ShadowedContainer extends StatefulWidget {
   const ShadowedContainer(
@@ -15,7 +14,6 @@ class ShadowedContainer extends StatefulWidget {
   final VoidCallback onTap;
   final void Function(bool)? onHover;
   final EdgeInsets? padding;
-
 
   @override
   State<ShadowedContainer> createState() => _ShadowedContainerState();
@@ -37,7 +35,6 @@ class _ShadowedContainerState extends State<ShadowedContainer> {
           _shadowColor = AppColor.primary;
         });
       },
-
       child: InkWell(
         onTap: widget.onTap,
         child: AnimatedContainer(
@@ -69,7 +66,9 @@ class BorderedContainer extends StatefulWidget {
       this.padding,
       this.margin,
       this.width,
-      this.height, this.color,  this.roundCorner=true})
+      this.height,
+      this.color,
+      this.roundCorner = true})
       : super(key: key);
   final Widget child;
   final VoidCallback? onTap;
@@ -85,7 +84,6 @@ class BorderedContainer extends StatefulWidget {
 }
 
 class _BorderedContainerState extends State<BorderedContainer> {
-
   Color? borderColor;
 
   @override
@@ -95,13 +93,11 @@ class _BorderedContainerState extends State<BorderedContainer> {
         setState(() {
           borderColor = null;
         });
-
       },
       onEnter: (event) {
         setState(() {
           borderColor = AppColor.primary;
         });
-
       },
       child: InkWell(
         onTap: widget.onTap,
@@ -113,10 +109,12 @@ class _BorderedContainerState extends State<BorderedContainer> {
           padding: widget.padding,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: widget.color??Colors.white10,
-              border: borderColor!=null? Border.all(color: borderColor!, width: 1): Border.all(),
-              borderRadius: widget.roundCorner? BorderRadius.circular(5):null,
-              ),
+            color: widget.color ?? Colors.white10,
+            border: borderColor != null
+                ? Border.all(color: borderColor!, width: 1)
+                : Border.all(),
+            borderRadius: widget.roundCorner ? BorderRadius.circular(5) : null,
+          ),
           duration: const Duration(milliseconds: 100),
           child: widget.child,
         ),

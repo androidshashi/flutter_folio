@@ -3,7 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_folio/constants/app_color.dart';
-import 'package:timelines/timelines.dart';
+// import 'package:timelines/timelines.dart';
 
 void showSnackBar(
     {required BuildContext context,
@@ -11,7 +11,7 @@ void showSnackBar(
     required bool success}) {
   if (!context.mounted) return;
   final snackBar = SnackBar(
-    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
     behavior: SnackBarBehavior.floating,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(5),
@@ -42,13 +42,13 @@ void hideKeyBoard() {
 
 /// Theme related
 
-final TimelineThemeData timelineThemeData = TimelineThemeData(
-  connectorTheme: ConnectorThemeData(
-    thickness: 3.0,
-    color: AppColor.primary,
-  ),
-  indicatorTheme: IndicatorThemeData(
-    size: 15.0,
-    color: AppColor.primary.shade400,
-  ),
-);
+// final TimelineThemeData timelineThemeData = TimelineThemeData(
+//   connectorTheme: ConnectorThemeData(
+//     thickness: 3.0,
+//     color: AppColor.primary,
+//   ),
+//   indicatorTheme: IndicatorThemeData(
+//     size: 15.0,
+//     color: AppColor.primary.shade400,
+//   ),
+// );

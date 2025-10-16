@@ -1,27 +1,28 @@
 [
+
   {
-    "title": "Senior Software Engineer",
-    "year": "2021 - Present",
+    "title": "Software Engineer II",
+    "year": "April 2024 - March 2025",
+    "company": "Junglee Games",
+    "location": "Gurugram"
+  },
+  {
+    "title": "Senior Flutter Engineer",
+    "year": "April 2024 - March 2025",
+    "company": "Unikon.ai",
+    "location": "Gurugram"
+  },
+  {
+    "title": "Senior Flutter Developer",
+    "year": "Oct 2021 - Feb 2024",
     "company": "Tech-dock Labs",
-    "location": "Lucknow, Uttar Pradesh"
+    "location": "Lucknow"
   },
   {
     "title": "Software Engineer",
+    "year": "Aug 2018 - Jan 2020",
     "company": "Capgemini",
-    "year": "Jan 2020 - Feb 2021",
-    "location": "Kolkata, West Bengal"
-  },
-  {
-    "title": "Software Engineer",
-    "year": "Aug 2019 - Jan 2020",
-    "company": "Capgemini",
-    "location": "Bengaluru, Karnataka"
-  },
-  {
-    "title": "Software Associate",
-    "year": "Aug 2018 - Aug 2019",
-    "company": "Capgemini",
-    "location": "Bengaluru, Karnataka"
+    "location": "Kolkata"
   }
 
 ]
