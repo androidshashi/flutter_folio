@@ -7,6 +7,9 @@ This is a simple flutter portfolio web app. You can also create your own using t
 You just have to enter your details in the json files and the your flutter dev folio is ready.
 Live Demo Link: https://androidshashi.com
 
+![ezgif com-video-to-gif](https://github.com/androidshashi/flutter_folio/assets/91884965/f6e250d4-09d4-4713-8173-657335f4d81d)
+
+
 ## MODIFICATIONS
 
 You you want the folio exactly shown in the demo link then you just have to put your details inside these json files.
